@@ -1,6 +1,6 @@
 from marshmallow import Schema, fields, validate
 
-VALID_CMD_COMMANDS = ('filter', 'unique', 'map', 'sort')
+VALID_CMD_COMMANDS = ('filter', 'unique', 'map', 'sort', 'limit')
 
 
 class RequestSchema(Schema):
