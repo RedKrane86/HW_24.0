@@ -11,7 +11,7 @@ main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/perform_query', methods=['POST'])
 def perform_query() -> Union[Response, Tuple[Response, int]]:
-    data: Dict[str, Union[List[dict], str]] = request.json
+    data: Dict[str, str] = request.json
 
     try:
         validated_data = RequestSchema().load(data)
@@ -32,4 +32,4 @@ def perform_query() -> Union[Response, Tuple[Response, int]]:
         file_name=data['file_name'],
     )
 
-    return result
+    return jsonify(result)
